@@ -1,0 +1,197 @@
+@import "../../_globalColor";
+
+$accentColor: $skillsColor;
+$accentColorDark: #9b94ff;
+
+.portfolio-summary-section {
+  padding: 50px 20px;
+  background-color: $lightBackground1;
+  transition: background-color 0.3s ease;
+
+  &.dark-mode {
+    background-color: $darkBackground;
+  }
+}
+
+.portfolio-summary-heading {
+  font-size: 3rem;
+  font-weight: 700;
+  color: $textColor;
+  margin-bottom: 40px;
+  text-align: center;
+  transition: color 0.3s ease;
+
+  &.dark-mode {
+    color: $lightBackground1;
+  }
+}
+
+.portfolio-summary-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.resume-summary-section {
+  margin-bottom: 50px;
+  padding: 30px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+
+  &.dark-mode {
+    background-color: #222836;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  }
+}
+
+.projects-overview-section {
+  &.dark-mode {
+    background-color: transparent;
+  }
+}
+
+.section-subheading {
+  font-size: 2rem;
+  font-weight: 600;
+  color: $textColor;
+  margin-bottom: 20px;
+  transition: color 0.3s ease;
+
+  &.dark-mode {
+    color: $lightBackground1;
+  }
+}
+
+.summary-text,
+.projects-intro {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: $textColor;
+  transition: color 0.3s ease;
+
+  &.dark-mode {
+    color: $lightBackground2;
+  }
+}
+
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.project-card {
+  padding: 25px;
+  background-color: white;
+  border-left: 4px solid $accentColor;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+  }
+
+  &.dark-mode {
+    background-color: #222836;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    border-left-color: $accentColorDark;
+
+    &:hover {
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+    }
+  }
+}
+
+.project-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: $textColor;
+  margin-bottom: 12px;
+  transition: color 0.3s ease;
+
+  .dark-mode & {
+    color: $lightBackground1;
+  }
+}
+
+.project-meta {
+  font-size: 0.95rem;
+  color: $textColor;
+  margin-bottom: 8px;
+  transition: color 0.3s ease;
+
+  strong {
+    color: $accentColor;
+    font-weight: 600;
+
+    .dark-mode & {
+      color: $accentColorDark;
+    }
+  }
+
+  .dark-mode & {
+    color: $lightBackground2;
+  }
+}
+
+.project-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: $textColor;
+  margin-top: 12px;
+  transition: color 0.3s ease;
+
+  .dark-mode & {
+    color: $lightBackground2;
+  }
+}
+
+@media (max-width: 960px) {
+  .portfolio-summary-section {
+    padding: 30px 15px;
+  }
+
+  .portfolio-summary-heading {
+    font-size: 2.2rem;
+  }
+
+  .section-subheading {
+    font-size: 1.5rem;
+  }
+
+  .projects-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .portfolio-summary-heading {
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+  }
+
+  .resume-summary-section {
+    padding: 20px;
+  }
+
+  .section-subheading {
+    font-size: 1.3rem;
+  }
+
+  .summary-text,
+  .projects-intro {
+    font-size: 1rem;
+  }
+
+  .project-title {
+    font-size: 1.2rem;
+  }
+
+  .project-meta {
+    font-size: 0.9rem;
+  }
+}
