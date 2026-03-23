@@ -1,0 +1,212 @@
+@import "../../_globalColor";
+
+.faith-section {
+  padding: 60px 20px;
+  background-color: $lightBackground2;
+  transition: background-color 0.3s ease;
+
+  &.dark-mode {
+    background-color: $darkBackground;
+  }
+}
+
+.faith-header {
+  text-align: center;
+  margin-bottom: 50px;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.faith-heading {
+  font-size: 3rem;
+  font-weight: 700;
+  color: $textColor;
+  margin-bottom: 15px;
+  transition: color 0.3s ease;
+
+  &.dark-mode {
+    color: $lightBackground1;
+  }
+}
+
+.faith-subtitle {
+  font-size: 1.3rem;
+  color: $textColor;
+  line-height: 1.6;
+  transition: color 0.3s ease;
+
+  &.dark-mode {
+    color: $lightBackground2;
+  }
+}
+
+.faith-categories {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 50px;
+}
+
+.faith-category {
+  margin-bottom: 30px;
+}
+
+.category-title {
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: $textColor;
+  margin-bottom: 10px;
+  border-bottom: 3px solid $highlightColor;
+  padding-bottom: 10px;
+  transition: color 0.3s ease;
+
+  &.dark-mode {
+    color: $lightBackground1;
+    border-bottom-color: $highlightColorDark;
+  }
+}
+
+.category-description {
+  font-size: 1.1rem;
+  color: $textColor;
+  margin-bottom: 25px;
+  font-style: italic;
+  transition: color 0.3s ease;
+
+  &.dark-mode {
+    color: $lightBackground2;
+  }
+}
+
+.principles-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 25px;
+}
+
+.principle-card {
+  padding: 25px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border-left: 5px solid $highlightColor;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  }
+
+  &.dark-mode {
+    background-color: $darkBackground1;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    border-left-color: $highlightColorDark;
+
+    &:hover {
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    }
+  }
+}
+
+.principle-header {
+  margin-bottom: 15px;
+}
+
+.principle-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: $textColor;
+  margin-bottom: 5px;
+  transition: color 0.3s ease;
+
+  .dark-mode & {
+    color: $lightBackground1;
+  }
+}
+
+.principle-reference {
+  font-size: 0.95rem;
+  color: $highlightColor;
+  font-weight: 600;
+  margin: 0;
+  transition: color 0.3s ease;
+
+  .dark-mode & {
+    color: $highlightColorDark;
+  }
+}
+
+.principle-content {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: $textColor;
+  margin: 0;
+  transition: color 0.3s ease;
+
+  .dark-mode & {
+    color: $lightBackground2;
+  }
+}
+
+@media (max-width: 960px) {
+  .faith-section {
+    padding: 40px 15px;
+  }
+
+  .faith-heading {
+    font-size: 2.2rem;
+  }
+
+  .faith-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .category-title {
+    font-size: 1.8rem;
+  }
+
+  .principles-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .faith-section {
+    padding: 30px 15px;
+  }
+
+  .faith-heading {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+  }
+
+  .faith-subtitle {
+    font-size: 1rem;
+  }
+
+  .category-title {
+    font-size: 1.5rem;
+    padding-bottom: 8px;
+    margin-bottom: 8px;
+  }
+
+  .principles-container {
+    gap: 15px;
+  }
+
+  .principle-card {
+    padding: 20px;
+    border-left-width: 4px;
+  }
+
+  .principle-title {
+    font-size: 1.2rem;
+  }
+
+  .principle-content {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+}

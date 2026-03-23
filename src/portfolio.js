@@ -20,43 +20,72 @@ const illustration = {
 };
 
 const greeting = {
-  username: "Saad Pasta",
-  title: "Hi all, I'm Saad",
+  username: "Isabel Lee",
+  title: "Hi all, I'm Isabel",
   subTitle: emoji(
-    "A passionate Full Stack Software Developer 🚀 having an experience of building Web and Mobile applications with JavaScript / Reactjs / Nodejs / React Native and some other cool libraries and frameworks."
+    "I am a software engineering student with experience in quality assurance and data analysis, preparing for a backend development career. I focus on building reliable, secure, and well-tested systems that support meaningful outcomes. My faith guides my technical decisions, emphasizing integrity, accountability, and service in all professional interactions. 🚀"
   ),
   resumeLink:
     "https://drive.google.com/file/d/1ofFdKF_mqscH8WvXkSObnVvC9kK7Ldlu/view?usp=sharing", // Set to empty to hide the button
   displayGreeting: true // Set false to hide this section, defaults to true
 };
 
+// Portfolio Summary Section
+
+const portfolioSummary = {
+  display: true, // Set false to hide this section
+  resumeSummary: "Software Engineering Student with strengths in backend development, QA, and data analytics. Experienced in web and mobile application testing, data validation, and ethical decision-making. Committed to integrity, service-oriented technology, and continuous learning.",
+  projectsOverview: "These projects reflect my growth in leadership, technical accuracy, and responsibility:",
+  projects: [
+    {
+      title: "Vitals Web Application",
+      role: "Developer & Scrum Master",
+      course: "CS 380",
+      description: "Led development of a web-based health monitoring application"
+    },
+    {
+      title: "Mobile Fall-Detection Application",
+      role: "Mobile Developer & QA Contributor",
+      course: "CS 470",
+      description: "Developed and tested mobile application for fall detection"
+    },
+    {
+      title: "Data Analytics Project",
+      role: "Data Analyst",
+      employer: "Ensign College",
+      position: "Student Employee",
+      description: "Conducted data validation and analysis for organizational decision-making"
+    }
+  ]
+};
+
 // Social Media Links
 
 const socialMediaLinks = {
-  github: "https://github.com/saadpasta",
-  linkedin: "https://www.linkedin.com/in/saadpasta/",
-  gmail: "saadpasta70@gmail.com",
-  gitlab: "https://gitlab.com/saadpasta",
-  facebook: "https://www.facebook.com/saad.pasta7",
-  medium: "https://medium.com/@saadpasta",
-  stackoverflow: "https://stackoverflow.com/users/10422806/saad-pasta",
+  github: "",
+  linkedin: "",
+  gmail: "",
+  gitlab: "",
+  facebook: "",
+  medium: "",
+  stackoverflow: "",
   // Instagram, Twitter and Kaggle are also supported in the links!
   // To customize icons and social links, tweak src/components/SocialMedia
-  display: true // Set true to display this section, defaults to false
+  display: false // Set true to display this section, defaults to false
 };
 
 // Skills Section
 
 const skillsSection = {
   title: "What I do",
-  subTitle: "CRAZY FULL STACK DEVELOPER WHO WANTS TO EXPLORE EVERY TECH STACK",
+  subTitle: "BACKEND DEVELOPER FOCUSED ON QUALITY ASSURANCE AND RELIABLE SYSTEMS",
   skills: [
     emoji(
-      "⚡ Develop highly interactive Front end / User Interfaces for your web and mobile applications"
+      "⚡ Build reliable, secure, and well-tested backend systems"
     ),
-    emoji("⚡ Progressive Web Applications ( PWA ) in normal and SPA Stacks"),
+    emoji("⚡ Quality assurance and data validation processes"),
     emoji(
-      "⚡ Integration of third party services such as Firebase/ AWS / Digital Ocean"
+      "⚡ Development practices emphasizing integrity and accountability"
     )
   ],
 
@@ -65,56 +94,24 @@ https://fontawesome.com/icons?d=gallery */
 
   softwareSkills: [
     {
-      skillName: "html-5",
-      fontAwesomeClassname: "fab fa-html5"
-    },
-    {
-      skillName: "css3",
-      fontAwesomeClassname: "fab fa-css3-alt"
-    },
-    {
-      skillName: "sass",
-      fontAwesomeClassname: "fab fa-sass"
-    },
-    {
       skillName: "JavaScript",
       fontAwesomeClassname: "fab fa-js"
     },
     {
-      skillName: "reactjs",
-      fontAwesomeClassname: "fab fa-react"
-    },
-    {
-      skillName: "nodejs",
-      fontAwesomeClassname: "fab fa-node"
-    },
-    {
-      skillName: "swift",
-      fontAwesomeClassname: "fab fa-swift"
-    },
-    {
-      skillName: "npm",
-      fontAwesomeClassname: "fab fa-npm"
-    },
-    {
-      skillName: "sql-database",
-      fontAwesomeClassname: "fas fa-database"
-    },
-    {
-      skillName: "aws",
-      fontAwesomeClassname: "fab fa-aws"
-    },
-    {
-      skillName: "firebase",
-      fontAwesomeClassname: "fas fa-fire"
-    },
-    {
-      skillName: "python",
+      skillName: "Python",
       fontAwesomeClassname: "fab fa-python"
     },
     {
-      skillName: "docker",
-      fontAwesomeClassname: "fab fa-docker"
+      skillName: "SQL",
+      fontAwesomeClassname: "fas fa-database"
+    },
+    {
+      skillName: "React",
+      fontAwesomeClassname: "fab fa-react"
+    },
+    {
+      skillName: "Node.js",
+      fontAwesomeClassname: "fab fa-node"
     }
   ],
   display: true // Set false to hide this section, defaults to true
@@ -126,23 +123,14 @@ const educationInfo = {
   display: true, // Set false to hide this section, defaults to true
   schools: [
     {
-      schoolName: "Harvard University",
+      schoolName: "Ensign College",
       logo: require("./assets/images/harvardLogo.png"),
-      subHeader: "Master of Science in Computer Science",
-      duration: "September 2017 - April 2019",
-      desc: "Participated in the research of XXX and published 3 papers.",
+      subHeader: "Bachelor of Science in Software Engineering",
+      duration: "Add your graduation date",
+      desc: "Add your education description",
       descBullets: [
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+        "Add relevant coursework or achievements"
       ]
-    },
-    {
-      schoolName: "Stanford University",
-      logo: require("./assets/images/stanfordLogo.png"),
-      subHeader: "Bachelor of Science in Computer Science",
-      duration: "September 2013 - April 2017",
-      desc: "Ranked top 10% in the program. Took courses about Software Engineering, Web Security, Operating Systems, ...",
-      descBullets: ["Lorem ipsum dolor sit amet, consectetur adipiscing elit"]
     }
   ]
 };
@@ -174,29 +162,15 @@ const workExperiences = {
   display: true, //Set it to true to show workExperiences Section
   experience: [
     {
-      role: "Software Engineer",
-      company: "Facebook",
+      role: "Data Analyst",
+      company: "Ensign College",
       companylogo: require("./assets/images/facebookLogo.png"),
-      date: "June 2018 – Present",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      date: "Student Employee",
+      desc: "Conducted data validation and analysis for organizational decision-making.",
       descBullets: [
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+        "Ensured data accuracy and integrity",
+        "Supported institutional decisions with validated data"
       ]
-    },
-    {
-      role: "Front-End Developer",
-      company: "Quora",
-      companylogo: require("./assets/images/quoraLogo.png"),
-      date: "May 2017 – May 2018",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    },
-    {
-      role: "Software Engineer Intern",
-      company: "Airbnb",
-      companylogo: require("./assets/images/airbnbLogo.png"),
-      date: "Jan 2015 – Sep 2015",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
     }
   ]
 };
@@ -212,29 +186,28 @@ const openSource = {
 // Some big projects you have worked on
 
 const bigProjects = {
-  title: "Big Projects",
-  subtitle: "SOME STARTUPS AND COMPANIES THAT I HELPED TO CREATE THEIR TECH",
+  title: "Projects",
+  subtitle: "PROJECTS REFLECT MY GROWTH IN LEADERSHIP, TECHNICAL ACCURACY, AND RESPONSIBILITY",
   projects: [
     {
       image: require("./assets/images/saayaHealthLogo.webp"),
-      projectName: "Saayahealth",
-      projectDesc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+      projectName: "Vitals Web Application",
+      projectDesc: "Developer & Scrum Master - CS 380",
       footerLink: [
         {
-          name: "Visit Website",
-          url: "http://saayahealth.com/"
+          name: "Learn More",
+          url: ""
         }
-        //  you can add extra buttons here.
       ]
     },
     {
       image: require("./assets/images/nextuLogo.webp"),
-      projectName: "Nextu",
-      projectDesc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+      projectName: "Mobile Fall-Detection Application",
+      projectDesc: "Mobile Developer & QA Contributor - CS 470",
       footerLink: [
         {
-          name: "Visit Website",
-          url: "http://nextu.se/"
+          name: "Learn More",
+          url: ""
         }
       ]
     }
@@ -248,54 +221,19 @@ const bigProjects = {
 const achievementSection = {
   title: emoji("Achievements And Certifications 🏆 "),
   subtitle:
-    "Achievements, Certifications, Award Letters and Some Cool Stuff that I have done !",
+    "Achievements, Certifications, and Professional Accomplishments",
 
   achievementsCards: [
     {
-      title: "Google Code-In Finalist",
+      title: "Add Achievement Title",
       subtitle:
-        "First Pakistani to be selected as Google Code-in Finalist from 4000 students from 77 different countries.",
+        "Add achievement description here",
       image: require("./assets/images/codeInLogo.webp"),
-      imageAlt: "Google Code-In Logo",
+      imageAlt: "Achievement Logo",
       footerLink: [
         {
-          name: "Certification",
-          url: "https://drive.google.com/file/d/0B7kazrtMwm5dYkVvNjdNWjNybWJrbndFSHpNY2NFV1p4YmU0/view?usp=sharing"
-        },
-        {
-          name: "Award Letter",
-          url: "https://drive.google.com/file/d/0B7kazrtMwm5dekxBTW5hQkg2WXUyR3QzQmR0VERiLXlGRVdF/view?usp=sharing"
-        },
-        {
-          name: "Google Code-in Blog",
-          url: "https://opensource.googleblog.com/2019/01/google-code-in-2018-winners.html"
-        }
-      ]
-    },
-    {
-      title: "Google Assistant Action",
-      subtitle:
-        "Developed a Google Assistant Action JavaScript Guru that is available on 2 Billion devices world wide.",
-      image: require("./assets/images/googleAssistantLogo.webp"),
-      imageAlt: "Google Assistant Action Logo",
-      footerLink: [
-        {
-          name: "View Google Assistant Action",
-          url: "https://assistant.google.com/services/a/uid/000000100ee688ee?hl=en"
-        }
-      ]
-    },
-
-    {
-      title: "PWA Web App Developer",
-      subtitle: "Completed Certifcation from SMIT for PWA Web App Development",
-      image: require("./assets/images/pwaLogo.webp"),
-      imageAlt: "PWA Logo",
-      footerLink: [
-        {name: "Certification", url: ""},
-        {
-          name: "Final Project",
-          url: "https://pakistan-olx-1.firebaseapp.com/"
+          name: "Learn More",
+          url: ""
         }
       ]
     }
@@ -308,23 +246,17 @@ const achievementSection = {
 const blogSection = {
   title: "Blogs",
   subtitle:
-    "With Love for Developing cool stuff, I love to write and teach others what I have learnt.",
-  displayMediumBlogs: "true", // Set true to display fetched medium blogs instead of hardcoded ones
+    "Sharing knowledge and insights from my journey in software engineering",
+  displayMediumBlogs: "false", // Set true to display fetched medium blogs instead of hardcoded ones
   blogs: [
     {
-      url: "https://blog.usejournal.com/create-a-google-assistant-action-and-win-a-google-t-shirt-and-cloud-credits-4a8d86d76eae",
-      title: "Win a Google Assistant Tshirt and $200 in Google Cloud Credits",
+      url: "",
+      title: "Add your blog title",
       description:
-        "Do you want to win $200 and Google Assistant Tshirt by creating a Google Assistant Action in less then 30 min?"
-    },
-    {
-      url: "https://medium.com/@saadpasta/why-react-is-the-best-5a97563f423e",
-      title: "Why REACT is The Best?",
-      description:
-        "React is a JavaScript library for building User Interface. It is maintained by Facebook and a community of individual developers and companies."
+        "Add your blog description"
     }
   ],
-  display: true // Set false to hide this section, defaults to true
+  display: false // Set false to hide this section, defaults to true
 };
 
 // Talks Sections
@@ -332,31 +264,31 @@ const blogSection = {
 const talkSection = {
   title: "TALKS",
   subtitle: emoji(
-    "I LOVE TO SHARE MY LIMITED KNOWLEDGE AND GET A SPEAKER BADGE 😅"
+    "Sharing insights and experiences from my journey"
   ),
 
   talks: [
     {
-      title: "Build Actions For Google Assistant",
-      subtitle: "Codelab at GDG DevFest Karachi 2019",
-      slides_url: "https://bit.ly/saadpasta-slides",
-      event_url: "https://www.facebook.com/events/2339906106275053/"
+      title: "Add talk title",
+      subtitle: "Add event and date",
+      slides_url: "",
+      event_url: ""
     }
   ],
-  display: true // Set false to hide this section, defaults to true
+  display: false // Set false to hide this section, defaults to true
 };
 
 // Podcast Section
 
 const podcastSection = {
   title: emoji("Podcast 🎙️"),
-  subtitle: "I LOVE TO TALK ABOUT MYSELF AND TECHNOLOGY",
+  subtitle: "Add your podcast content",
 
   // Please Provide with Your Podcast embeded Link
   podcast: [
-    "https://anchor.fm/codevcast/embed/episodes/DevStory---Saad-Pasta-from-Karachi--Pakistan-e9givv/a-a15itvo"
+    ""
   ],
-  display: true // Set false to hide this section, defaults to true
+  display: false // Set false to hide this section, defaults to true
 };
 
 // Resume Section
@@ -368,19 +300,147 @@ const resumeSection = {
   display: true // Set false to hide this section, defaults to true
 };
 
+// Faith and Values Section
+const faithSection = {
+  title: emoji("Faith & Values 🙏"),
+  subtitle: "How My Faith Guides My Professional and Personal Journey",
+  display: true,
+  categories: [
+    {
+      categoryName: "Faith",
+      categoryDescription: "Core spiritual principles that guide my path",
+      principles: [
+        {
+          reference: "Ether 12:27 — Strength Through Humility",
+          title: "Ether 12:27",
+          content: "This scripture teaches that weaknesses can become strengths when we come unto the Lord with humility. This principle connects directly to my experience studying in Brazil, where I faced language barriers, cultural differences, and unkind group environments. Through these challenges, the Lord strengthened me, protected me, and helped me remain faithful. This experience taught me that faith allows the Lord to transform difficult situations into opportunities for spiritual and personal growth."
+        },
+        {
+          reference: "James 1:5 — Seeking Guidance in Trials",
+          title: "James 1:5",
+          content: "This scripture teaches me to seek guidance from God during moments of doubt or difficulty. I believe that when we ask sincerely, our Savior shows us the way through the guidance of the Holy Ghost, if we are willing to listen. There were many moments in my life when I felt uncertain about my career path and unsure of which direction to take. Through prayer, persistence, and continued learning, I was guided to improve my technical skills and gradually find better professional opportunities."
+        },
+        {
+          reference: "Alma 37:37 — Counsel with the Lord in All Thy Doings",
+          title: "Alma 37:37",
+          content: "I turn to this verse when I feel overwhelmed by responsibilities or important decisions. It reminds me to counsel with the Lord daily—whether deciding where to study, where to apply for internships, what steps to take in my career, or even personal matters such as preparing for my eternal companion. When I invite the Lord into my decisions, I feel more confident and accurate in my next steps, both in major life choices and in everyday interactions."
+        },
+        {
+          reference: "President Dieter F. Uchtdorf — The Infinite Power of Hope",
+          title: "President Dieter F. Uchtdorf",
+          content: "President Uchtdorf teaches that hope in Jesus Christ gives us strength to move forward despite uncertainty. This message aligns closely with my experiences in Brazil and throughout my educational journey—times when I felt alone, tested, or unsure. Hope in Christ helped me remain firm in my faith and continue progressing, trusting that the Lord had a purpose for each step of my path."
+        }
+      ]
+    },
+    {
+      categoryName: "Integrity",
+      categoryDescription: "Moral principles that guide my professional decisions",
+      principles: [
+        {
+          reference: "Doctrine & Covenants 121:45 — Virtue and Christlike Love",
+          title: "Doctrine & Covenants 121:45",
+          content: "This verse reminds me to fill my thoughts with virtue and act with charity. It reflects my commitment to maintain integrity in academic and professional environments, even when external pressures encourage different behavior. This scripture guides how I interact with others, how I approach ethical decisions, and how I strive to reflect Christlike values in my work and relationships."
+        },
+        {
+          reference: "Moroni 7:45–47 — Charity, the Pure Love of Christ",
+          title: "Moroni 7:45–47",
+          content: "This scripture invites me to act with pure intentions in everything I do. It has helped me reflect deeply on my motivation to serve and be kind to others, even when some people may misunderstand my intentions or think I seek personal advantage. Charity reminds me to act with sincerity, patience, and love, regardless of how my actions are perceived, trusting that the Lord knows the intent of my heart."
+        }
+      ]
+    },
+    {
+      categoryName: "Gratitude and Service",
+      categoryDescription: "Principles that help me maintain perspective and purpose",
+      principles: [
+        {
+          reference: "President Thomas S. Monson — The Divine Gift of Gratitude",
+          title: "President Thomas S. Monson",
+          content: "President Monson teaches that gratitude opens our hearts to joy and spiritual clarity. His message helps me recognize the many blessings in my life, including my parents' support, the educational and professional opportunities I have received, and the Lord's guidance throughout each stage of my journey—from Peru, to Brazil, and now to the United States. Gratitude helps me remain humble and mindful of God's hand in my progress."
+        },
+        {
+          reference: "Mosiah 2:17 — Service as a Form of Discipleship",
+          title: "Mosiah 2:17",
+          content: "This scripture teaches that when we serve others, we are truly serving God. It reflects my desire to use my software engineering skills to bless others—through teamwork, tutoring, solving problems, and building technology that can positively impact people's lives. Service has helped me stay grounded and reminded me that my education and career are meant to be used to uplift others, not only myself."
+        }
+      ]
+    }
+  ]
+};
+
+// Ethical Dilemma Analysis Section
+const ethicalDilemmaSection = {
+  title: emoji("Ethical Dilemma Analysis ⚖️"),
+  subtitle: "How I Navigate Ethical Challenges in My Professional Practice",
+  display: true,
+  dilemmaDescription: "While working as a student data analyst, I encountered an ethical dilemma when a report was requested before the dataset refresh process was complete. Delivering the report immediately would have meant sharing incomplete and potentially inaccurate data. Because this report was used to support institutional decisions, releasing incorrect information could have led to poor decision making, misallocation of resources, or misunderstandings that affected students and administrators. This situation placed me in a position where speed and convenience conflicted with accuracy and responsibility.",
+  analysisHeading: "How I Responded",
+  analysisContent: "Although there was pressure to deliver the report quickly, I recognized that my professional responsibility was to ensure data integrity. As someone working with institutional data, I understood that trust is built on accuracy, transparency, and accountability. Releasing information I knew was not fully validated would have compromised that trust. I therefore chose to delay the report and clearly communicate the situation to the stakeholders involved. I explained why the data was not ready, outlined the risks of using incomplete information, and ensured the dataset was fully refreshed and validated before releasing the final version.",
+  reflectionHeading: "What I Learned",
+  reflectionPoints: [
+    "Ethical decision making in technology often requires the courage to slow down and choose what is right rather than what is easy.",
+    "Integrity is not only demonstrated through large actions but also through small, everyday decisions such as choosing accuracy over speed or honesty over convenience.",
+    "Ethical behavior protects not only data but also people, relationships, and institutional trust.",
+    "My faith and professional identity are deeply connected; my ethical choices at work are one way I live my spiritual principles.",
+    "As I continue preparing for a career in backend software development, prioritizing integrity, accountability, and ethical responsibility in every system I design will be fundamental to my approach."
+  ],
+  spiritualPerspective: "From a spiritual perspective, this dilemma strengthened my commitment to live my discipleship through my professional actions. Choosing honesty and responsibility aligned with my values and helped me act as a steward of the trust placed in me."
+};
+
+// Reflective Experience: Spiritual and Professional Interplay Section
+const reflectiveExperienceSection = {
+  title: emoji("Reflective Experience 🙌"),
+  subtitle: "Spiritual and Professional Interplay",
+  display: true,
+  introContent: "During a quiet reflective experience focused on my temple covenants and spiritual journey, I felt peace, clarity, and deep gratitude. I recognized the hand of the Lord guiding me through paths I did not originally plan to take, especially my decision to return to school. At one point, I did not want to continue my education, yet now, as I approach graduation at Ensign College, I clearly see how the Lord gently guided me back to an old dream that is becoming an engineer and earning a degree in the United States.",
+  journeyReflection: {
+    heading: "A Journey of Faith and Resilience",
+    content: "My time studying in Brazil, with its language barriers and cultural challenges, also strengthened my faith and resilience. Receiving my temple endowment and attending the temple regularly helped me recognize what I needed to change in my life, including leaving behind habits or influences that were not helping me stay strong in the gospel and choosing counsel that brought me closer to the Lord and to my family."
+  },
+  serviceAndBalance: {
+    heading: "Service and Professional Purpose",
+    content: "During this journey, I also learned the importance of continuing to serve others. Even while managing academic pressure and personal growth, I felt prompted to find ways to help and uplift those around me. Service helped me stay grounded and reminded me that my education and career are not only about personal achievement, but about becoming someone who can bless others."
+  },
+  integration: {
+    heading: "Integration of Faith and Work",
+    content: "This reflection helped me understand that my spiritual and professional lives are deeply intertwined. My faith influences how I approach ethics, teamwork, learning, and service, while my professional experiences strengthen my testimony through patience, humility, and responsibility. Recognizing the Lord's hand in my education and preparation has brought me peace and joy, and I now see my career as a path to live my discipleship and serve others through my skills."
+  },
+  keyInsights: [
+    {
+      title: "Divine Guidance",
+      description: "The Lord guided me back to completing my education, a dream I had temporarily abandoned."
+    },
+    {
+      title: "Strengthened Faith",
+      description: "Challenges in Brazil and temple work deepened my faith and personal resilience."
+    },
+    {
+      title: "Service-Oriented Approach",
+      description: "My education and career are meant to bless others, not just achieve personal success."
+    },
+    {
+      title: "Unified Identity",
+      description: "My faith and professional life are inseparable; ethical choices at work are spiritual expressions."
+    },
+    {
+      title: "Peace and Purpose",
+      description: "Recognizing the Lord's hand brings clarity that my backend development career serves a greater purpose."
+    }
+  ]
+};
+
 const contactInfo = {
   title: emoji("Contact Me ☎️"),
   subtitle:
     "Discuss a project or just want to say hi? My Inbox is open for all.",
-  number: "+92-0000000000",
-  email_address: "saadpasta70@gmail.com"
+  number: "Add your phone number",
+  email_address: "Add your email"
 };
 
 // Twitter Section
 
 const twitterDetails = {
-  userName: "twitter", //Replace "twitter" with your twitter username without @
-  display: true // Set true to display this section, defaults to false
+  userName: "", //Replace "twitter" with your twitter username without @
+  display: false // Set true to display this section, defaults to false
 };
 
 const isHireable = false; // Set false if you are not looking for a job. Also isHireable will be display as Open for opportunities: Yes/No in the GitHub footer
@@ -403,5 +463,9 @@ export {
   contactInfo,
   twitterDetails,
   isHireable,
-  resumeSection
+  resumeSection,
+  portfolioSummary,
+  faithSection,
+  ethicalDilemmaSection,
+  reflectiveExperienceSection
 };

@@ -1,0 +1,318 @@
+@import "../../_globalColor";
+
+.reflective-experience-section {
+  padding: 60px 20px;
+  background: linear-gradient(135deg, $lightBackground2 0%, $lightBackground1 100%);
+  transition: background 0.3s ease;
+
+  &.dark-mode {
+    background: linear-gradient(135deg, $darkBackground 0%, $darkBackground1 100%);
+  }
+}
+
+.reflective-header {
+  text-align: center;
+  margin-bottom: 50px;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.reflective-heading {
+  font-size: 3rem;
+  font-weight: 700;
+  color: $textColor;
+  margin-bottom: 15px;
+  transition: color 0.3s ease;
+
+  &.dark-mode {
+    color: $lightBackground1;
+  }
+}
+
+.reflective-subtitle {
+  font-size: 1.3rem;
+  color: $textColor;
+  line-height: 1.6;
+  font-weight: 500;
+  transition: color 0.3s ease;
+
+  &.dark-mode {
+    color: $lightBackground2;
+  }
+}
+
+.reflective-content {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.content-block {
+  margin-bottom: 35px;
+  padding: 30px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+  border-top: 4px solid $highlightColor;
+  transition: all 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+    transform: translateY(-4px);
+  }
+
+  &.dark-mode {
+    background-color: $darkBackground1;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.3);
+    border-top-color: $highlightColorDark;
+
+    &:hover {
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    }
+  }
+}
+
+.intro-block {
+  background: linear-gradient(135deg, rgba(100, 150, 200, 0.05) 0%, rgba(100, 150, 200, 0.02) 100%);
+  border-top: none;
+  border-left: 5px solid $highlightColor;
+
+  &.dark-mode {
+    background: linear-gradient(135deg, rgba(100, 150, 200, 0.1) 0%, rgba(100, 150, 200, 0.05) 100%);
+    border-left-color: $highlightColorDark;
+  }
+}
+
+.block-heading {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: $textColor;
+  margin-bottom: 18px;
+  transition: color 0.3s ease;
+
+  &.dark-mode {
+    color: $lightBackground1;
+  }
+}
+
+.block-text {
+  font-size: 1.05rem;
+  line-height: 1.85;
+  color: $textColor;
+  margin: 0;
+  transition: color 0.3s ease;
+
+  &.dark-mode {
+    color: $lightBackground2;
+  }
+}
+
+.key-insights {
+  margin-top: 50px;
+}
+
+.insights-heading {
+  font-size: 2rem;
+  font-weight: 700;
+  color: $textColor;
+  margin-bottom: 35px;
+  text-align: center;
+  transition: color 0.3s ease;
+
+  &.dark-mode {
+    color: $lightBackground1;
+  }
+}
+
+.insights-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.insight-card {
+  position: relative;
+  padding: 30px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border: 2px solid $highlightColor;
+  transition: all 0.3s ease;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, $highlightColor, transparent);
+    transition: all 0.3s ease;
+  }
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  }
+
+  &.dark-mode {
+    background-color: $darkBackground1;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    border-color: $highlightColorDark;
+
+    &::before {
+      background: linear-gradient(90deg, $highlightColorDark, transparent);
+    }
+
+    &:hover {
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    }
+  }
+}
+
+.insight-number {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  width: 45px;
+  height: 45px;
+  background-color: $highlightColor;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  transition: all 0.3s ease;
+
+  .dark-mode & {
+    background-color: $highlightColorDark;
+  }
+}
+
+.insight-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: $textColor;
+  margin-bottom: 12px;
+  margin-top: 5px;
+  transition: color 0.3s ease;
+
+  .dark-mode & {
+    color: $lightBackground1;
+  }
+}
+
+.insight-description {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: $textColor;
+  margin: 0;
+  transition: color 0.3s ease;
+
+  .dark-mode & {
+    color: $lightBackground2;
+  }
+}
+
+@media (max-width: 960px) {
+  .reflective-experience-section {
+    padding: 40px 15px;
+  }
+
+  .reflective-heading {
+    font-size: 2.2rem;
+  }
+
+  .reflective-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .content-block {
+    padding: 25px;
+    margin-bottom: 25px;
+  }
+
+  .block-heading {
+    font-size: 1.4rem;
+  }
+
+  .block-text {
+    font-size: 1rem;
+  }
+
+  .insights-heading {
+    font-size: 1.7rem;
+  }
+
+  .insights-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .reflective-experience-section {
+    padding: 30px 15px;
+  }
+
+  .reflective-heading {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+  }
+
+  .reflective-subtitle {
+    font-size: 1rem;
+  }
+
+  .content-block {
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+
+  .block-heading {
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+  }
+
+  .block-text {
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+  .key-insights {
+    margin-top: 35px;
+  }
+
+  .insights-heading {
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+  }
+
+  .insights-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .insight-card {
+    padding: 25px;
+    border: 1px solid $highlightColor;
+  }
+
+  .insight-number {
+    width: 40px;
+    height: 40px;
+    font-size: 1.3rem;
+    top: 10px;
+    right: 15px;
+  }
+
+  .insight-title {
+    font-size: 1.1rem;
+  }
+
+  .insight-description {
+    font-size: 0.95rem;
+  }
+}

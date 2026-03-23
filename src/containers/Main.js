@@ -1,6 +1,10 @@
 import React, {useEffect, useState} from "react";
 import Header from "../components/header/Header";
 import Greeting from "./greeting/Greeting";
+import PortfolioSummary from "./portfolioSummary/PortfolioSummary";
+import Faith from "./faith/Faith";
+import EthicalDilemma from "./ethicalDilemma/EthicalDilemma";
+import ReflectiveExperience from "./reflectiveExperience/ReflectiveExperience";
 import Skills from "./skills/Skills";
 import StackProgress from "./skillProgress/skillProgress";
 import WorkExperience from "./workExperience/WorkExperience";
@@ -52,6 +56,10 @@ const Main = () => {
           <>
             <Header />
             <Greeting />
+            <PortfolioSummary />
+            <Faith />
+            <EthicalDilemma />
+            <ReflectiveExperience />
             <Skills />
             <StackProgress />
             <Education />
