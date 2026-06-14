@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AWS Quiz Game</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 700px;
+      background: white;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    }
+
+    h1 {
+      color: #333;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    .subtitle {
+      color: #666;
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 14px;
+    }
+
+    .category {
+      background: #f0f0f0;
+      padding: 10px;
+      border-left: 4px solid #667eea;
+      margin-bottom: 20px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    #question {
+      font-size: 18px;
+      color: #222;
+      margin-bottom: 25px;
+      line-height: 1.5;
+    }
+
+    #answers {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin-bottom: 30px;
+    }
+
+    button {
+      padding: 15px;
+      background: #f0f0f0;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: all 0.3s ease;
+      text-align: left;
+    }
+
+    button:hover {
+      background: #e0e0e0;
+      border-color: #667eea;
+    }
+
+    button.correct {
+      background: #4caf50;
+      color: white;
+      border-color: #4caf50;
+    }
+
+    button.incorrect {
+      background: #f44336;
+      color: white;
+      border-color: #f44336;
+    }
+
+    #score {
+      text-align: center;
+      color: #667eea;
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    .progress {
+      background: #f0f0f0;
+      height: 8px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      overflow: hidden;
+    }
+
+    .progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, #667eea, #764ba2);
+      transition: width 0.3s ease;
+    }
+
+    .game-over {
+      text-align: center;
+    }
+
+    .game-over h2 {
+      color: #333;
+      margin-bottom: 20px;
+      font-size: 28px;
+    }
+
+    .final-score {
+      font-size: 48px;
+      color: #667eea;
+      font-weight: bold;
+      margin: 20px 0;
+    }
+
+    .restart-btn {
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: white;
+      padding: 15px 40px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-top: 20px;
+    }
+
+    .restart-btn:hover {
+      opacity: 0.9;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 30px;
+      color: #667eea;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 24px;
+      }
+
+      #question {
+        font-size: 16px;
+      }
+
+      button {
+        padding: 12px;
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>AWS Quiz Game</h1>
+  <p class="subtitle">Test your AWS knowledge • 30 Questions</p>
+  <p style="text-align: center; color: #667eea; font-style: italic; margin-bottom: 25px; font-weight: 500;">"Knowledge is the foundation of innovation. Master AWS, master the cloud." — Isabel Lee</p>
+
+  <div class="progress">
+    <div class="progress-bar" id="progressBar"></div>
+  </div>
+
+  <div id="category" class="category"></div>
+  <h3 id="question"></h3>
+  <div id="answers"></div>
+  <h2 id="score"></h2>
+
+  <a href="index.html" class="back-link">← Back to Portfolio</a>
+</div>
+
+<script>
+const quiz = [
+  { cat:"Security & IAM", q:"Max managed IAM policies per user/role?", a:["12","10","5","8"], correct:1},
+  { cat:"Security & IAM", q:"Service for app user sign-in?", a:["SSO","VPC","Cognito","IAM"], correct:2},
+  { cat:"Storage", q:"AWS object storage service?", a:["Redshift","S3","EBS","DynamoDB"], correct:1},
+  { cat:"Storage", q:"S3 true statement?", a:["Not free tier","Public access denied","URL only","API only"], correct:1},
+  { cat:"Databases", q:"Aurora supports?", a:["MariaDB","SQL Server","Oracle","PostgreSQL"], correct:3},
+
+  { cat:"Networking", q:"Max VPC per account?", a:["10","8","2","5"], correct:3},
+  { cat:"Security & IAM", q:"Fine-grained access control?", a:["KMS","CSP","Infra","IAM"], correct:3},
+  { cat:"Compute", q:"EC2 launch info?", a:["AMI","Stack","Code","Template"], correct:0},
+  { cat:"Compute", q:"Multi-tenancy uses?", a:["DB","Switches","Servers","Hypervisors"], correct:3},
+  { cat:"Monitoring", q:"Monitoring service?", a:["CloudTrail","CloudWatch","CloudFront","CloudFormation"], correct:1},
+
+  { cat:"Compute", q:"Create block storage?", a:["IAM","VPC","EC2","KMS"], correct:2},
+  { cat:"Optimization", q:"Best practice checks service?", a:["Control Tower","Access Analyzer","Cost Explorer","Trusted Advisor"], correct:3},
+  { cat:"Cloud Concepts", q:"Build or buy DevOps value?", a:["Agility","Security","Cost","Elasticity"], correct:0},
+  { cat:"Cloud Concepts", q:"Top AWS priority?", a:["Agility","Cost","Elasticity","Security"], correct:3},
+  { cat:"Security", q:"Customer responsibility?", a:["Data centers","Network infra","Security groups","AZs"], correct:2},
+
+  { cat:"Pricing", q:"Interruptible cheap compute?", a:["Reserved","Dedicated","Spot","Savings"], correct:2},
+  { cat:"Security", q:"Central security findings?", a:["Inspector","Security Hub","GuardDuty","Shield"], correct:1},
+  { cat:"Security", q:"IAM policy analysis?", a:["Trusted Advisor","Access Analyzer","Macie","Artifact"], correct:1},
+  { cat:"Management", q:"Stop unused EC2?", a:["Budgets","CloudWatch","Cost Explorer","Systems Manager"], correct:3},
+  { cat:"Pricing", q:"Biggest discount model?", a:["On-demand","Spot","Savings Plans","Dedicated"], correct:2},
+
+  { cat:"Security", q:"Threat detection ML?", a:["GuardDuty","WAF","Inspector","Config"], correct:0},
+  { cat:"Pricing", q:"Cost alerts service?", a:["Budgets","Shield","Inspector","Artifact"], correct:0},
+  { cat:"Security", q:"Encryption keys service?", a:["Cognito","KMS","Organizations","Shield"], correct:1},
+  { cat:"Compute", q:"Auto scaling benefit?", a:["No cost","Unlimited storage","Match demand","No security"], correct:2},
+  { cat:"Networking", q:"CDN service?", a:["Route53","CloudFront","S3","Direct Connect"], correct:1},
+
+  { cat:"Networking", q:"Domain service?", a:["Organizations","CloudWatch","Route53","Lambda"], correct:2},
+  { cat:"Availability", q:"Availability zone benefit?", a:["Storage","High availability","IAM","No backups"], correct:1},
+  { cat:"Compute", q:"Serverless compute?", a:["EC2","Lambda","RDS","Batch"], correct:1},
+  { cat:"Security", q:"DDoS protection?", a:["IAM","Shield","Inspector","CloudTrail"], correct:1},
+  { cat:"Storage", q:"Data warehouse service?", a:["DynamoDB","RDS","Redshift","Neptune"], correct:2}
+];
+
+let current = 0;
+let score = 0;
+let answered = false;
+
+function updateProgress() {
+  const progress = ((current) / quiz.length) * 100;
+  document.getElementById("progressBar").style.width = progress + "%";
+}
+
+function loadQuestion() {
+  answered = false;
+
+  if (current >= quiz.length) {
+    showGameOver();
+    return;
+  }
+
+  let q = quiz[current];
+  document.getElementById("category").innerText = "Category: " + q.cat;
+  document.getElementById("question").innerText = q.q;
+
+  let html = "";
+  q.a.forEach((ans, i) => {
+    html += `<button onclick="checkAnswer(${i})" data-index="${i}">${ans}</button>`;
+  });
+
+  document.getElementById("answers").innerHTML = html;
+  document.getElementById("score").innerText = "Question " + (current + 1) + " of " + quiz.length + " | Score: " + score;
+  updateProgress();
+}
+
+function checkAnswer(i) {
+  if (answered) return;
+  answered = true;
+
+  const buttons = document.querySelectorAll("#answers button");
+  const correct = quiz[current].correct;
+
+  buttons[correct].classList.add("correct");
+
+  if (i === correct) {
+    score++;
+    buttons[i].style.background = "#4caf50";
+    buttons[i].style.color = "white";
+  } else {
+    buttons[i].classList.add("incorrect");
+  }
+
+  setTimeout(() => {
+    current++;
+    loadQuestion();
+  }, 1500);
+}
+
+function showGameOver() {
+  const percentage = Math.round((score / quiz.length) * 100);
+  let message = "";
+
+  if (percentage === 100) {
+    message = "Perfect! You're an AWS expert! 🚀";
+  } else if (percentage >= 80) {
+    message = "Excellent! You know AWS well! 🎉";
+  } else if (percentage >= 60) {
+    message = "Good job! Keep learning! 📚";
+  } else if (percentage >= 40) {
+    message = "Not bad! Practice more! 💪";
+  } else {
+    message = "Keep studying! You'll get there! 🌟";
+  }
+
+  document.getElementById("category").innerHTML = "";
+  document.getElementById("question").innerHTML = "";
+  document.getElementById("answers").innerHTML = `
+    <div class="game-over">
+      <h2>Quiz Complete!</h2>
+      <p style="color: #666; margin-bottom: 20px;">${message}</p>
+      <div class="final-score">${score}/${quiz.length}</div>
+      <p style="color: #999; margin-bottom: 20px;">${percentage}% Correct</p>
+      <button class="restart-btn" onclick="location.reload()">Try Again</button>
+    </div>
+  `;
+  document.getElementById("score").innerHTML = "";
+}
+
+// Start the game
+loadQuestion();
+</script>
+
+</body>
+</html>

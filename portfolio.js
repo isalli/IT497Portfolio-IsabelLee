@@ -528,6 +528,13 @@ const reflectiveExperienceSection = {
   ]
 };
 
+const gameSection = {
+  title: "Game Room",
+  subtitle: "A quick number-guessing challenge for a lighter break in the portfolio.",
+  display: true,
+  pageLink: "game.html"
+};
+
 const contactInfo = {
   title: emoji("Contact Me ☎️"),
   subtitle:
@@ -567,5 +574,6 @@ export {
   portfolioSummary,
   faithSection,
   ethicalDilemmaSection,
-  reflectiveExperienceSection
+  reflectiveExperienceSection,
+  gameSection
 };
